@@ -4,8 +4,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Sistema de Actividades Complementarias</title>
-		<link href="assets/css/bootstrap.min.css" rel="stylesheet" >
-    <link href="assets/css/estilos.css" rel="stylesheet" >
+		<link href="<?=base_url?>assets/css/bootstrap.min.css" rel="stylesheet" >
+    	<link href="<?=base_url?>assets/css/estilos.css" rel="stylesheet" >
 	</head>
 <body>
 	<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -32,8 +32,8 @@
 		<div class="row">
 			<div class="col">
 				<header id="header">
-					<img src="assets/img/logo-775149065.png" alt="GOB" />
-					<img src="assets/img/logo-2084113138.png" alt="GOB" />
-					<img src="assets/img/logo-628132927.png" alt="GOB" />
+					<img src="<?=base_url?>assets/img/logo-775149065.png" alt="GOB" />
+					<img src="<?=base_url?>assets/img/logo-2084113138.png" alt="GOB" />
+					<img src="<?=base_url?>assets/img/logo-628132927.png" alt="GOB" />
 				</header>
 			</div>
