@@ -1,7 +1,7 @@
 <h1>Crear usuario</h1>
 
-<h4 class="mb-3">Billing address</h4>
-        <form class="needs-validation" action="index.php?controller=usuarios&action=save" method="POST">
+<h4 class="mb-3">Registro de usuarios</h4>
+        <form class="needs-validation" action="<?=base_url?>usuarios/save" method="POST">
           <div class="row g-3">
           <div class="col-12">
               <label for="usuario" class="form-label">Usuario</label>

@@ -5,6 +5,9 @@ require_once 'config/parameters.php';
 require_once 'views/layout/header.php';
 require_once 'views/layout/aside.php';
 
+// Conexion a la base de datos
+$db = Database::connect();
+
 function show_error(){
 	$error = new errorController();
 	$error->index();
