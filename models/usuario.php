@@ -88,8 +88,14 @@ class Usuario{
         $this->estado = $this->db->real_escape_string($estado);
     }
 
+    public function read(){
+        $usuarios = $this->db->query("SELECT A.ID_USUARIO, A.USUARIO, B.NOMBRE_ROL, A.NOMBRE, A.APELLIDO_PATERNO, A.APELLIDO_MATERNO, C.AREA, A.ESTADO FROM `usuarios` AS A INNER JOIN `rol` AS B ON A.ID_ROL = B.ID_ROL INNER JOIN `organigrama` AS C ON A.ID_ORGANIGRAMA = C.ID_ORGANIGRAMA;");
+		return $usuarios;
+    }
+
     public function save(){
         $sql = "INSERT INTO usuarios (USUARIO, ID_ROL, NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO, ID_ORGANIGRAMA, PASS, ESTADO) VALUES('{$this->getUsuario()}', '1', '{$this->getNombre()}', '{$this->getApellido_paterno()}', '{$this->getApellido_materno()}', '75', '{$this->getId_pass()}', '1');";
+        #INSERT INTO `usuarios` (`USUARIO`, `ID_ROL`, `NOMBRE`, `APELLIDO_PATERNO`, `APELLIDO_MATERNO`, `ID_ORGANIGRAMA`, `PASS`, `ESTADO`) VALUES ('Valeria', '1', 'Valeria', 'Alvarez', 'Lopz', '46', SHA1('leonel'), '1');
 		$save = $this->db->query($sql);
 		
 		$result = false;

@@ -6,6 +6,7 @@
 		<title>Sistema de Actividades Complementarias</title>
 		<link href="<?=base_url?>assets/css/bootstrap.min.css" rel="stylesheet" >
     	<link href="<?=base_url?>assets/css/estilos.css" rel="stylesheet" >
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 	</head>
 <body>
 	<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">

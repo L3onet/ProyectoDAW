@@ -11,6 +11,13 @@ require_once 'models/usuario.php';
     require_once 'views/usuario/create.php';
   }
 
+  public function read(){
+    $usuario = new Usuario();
+		$usuarios = $usuario->read();
+
+    require_once 'views/usuario/read.php';
+  }
+
   public function save(){
     if(isset($_POST)){
       
