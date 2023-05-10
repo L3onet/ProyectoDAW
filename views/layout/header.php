@@ -7,6 +7,15 @@
 		<link href="<?=base_url?>assets/css/bootstrap.min.css" rel="stylesheet" >
     	<link href="<?=base_url?>assets/css/estilos.css" rel="stylesheet" >
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+		<!-- Datepicker -->
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css' rel='stylesheet' type='text/css'>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js' type='text/javascript'></script>
+
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+
 	</head>
 <body>
 	<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">

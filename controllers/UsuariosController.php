@@ -18,6 +18,19 @@ require_once 'models/usuario.php';
     require_once 'views/usuario/read.php';
   }
 
+  public function view(){
+    if(isset($_GET['id'])){
+			$id = $_GET['id'];
+		
+			$usuario = new Usuario();
+			$usuario->setId_usuario($id);
+			
+			$product = $producto->getOne();
+			
+		}
+		require_once 'views/producto/ver.php';
+  }
+
   public function save(){
     if(isset($_POST)){
       
@@ -43,5 +56,6 @@ require_once 'models/usuario.php';
 				}
       }
     }
+    header('Location:'.base_url.'usuario/read');
   }
 }

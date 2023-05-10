@@ -22,7 +22,7 @@
             
             <div class="col-sm-4">
               <label for="apellidom" class="form-label">Apellido materno</label>
-              <input type="text" class="form-control" id="apellidom" name="apellidom" placeholder="Apellido materno" value="" required>
+              <input type="text" data-provide="datepicker" class="form-control" id="apellidom" name="apellidom" placeholder="Apellido materno" value="" required>
             </div>
             
 
