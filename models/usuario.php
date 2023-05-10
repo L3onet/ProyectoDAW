@@ -99,7 +99,7 @@ class Usuario{
     }
 
     public function save(){
-        $sql = "INSERT INTO usuarios (USUARIO, ID_ROL, NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO, ID_ORGANIGRAMA, PASS, ESTADO) VALUES('{$this->getUsuario()}', '1', '{$this->getNombre()}', '{$this->getApellido_paterno()}', '{$this->getApellido_materno()}', '75', '{$this->getId_pass()}', '1');";
+        $sql = "INSERT INTO usuarios (USUARIO, ID_ROL, NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO, ID_ORGANIGRAMA, PASS, ESTADO) VALUES('{$this->getUsuario()}', '{$this->getId_rol()}', '{$this->getNombre()}', '{$this->getApellido_paterno()}', '{$this->getApellido_materno()}', '75', '{$this->getId_pass()}', '1');";
         #INSERT INTO `usuarios` (`USUARIO`, `ID_ROL`, `NOMBRE`, `APELLIDO_PATERNO`, `APELLIDO_MATERNO`, `ID_ORGANIGRAMA`, `PASS`, `ESTADO`) VALUES ('Valeria', '1', 'Valeria', 'Alvarez', 'Lopz', '46', SHA1('leonel'), '1');
 		$save = $this->db->query($sql);
 		

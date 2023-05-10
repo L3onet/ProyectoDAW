@@ -25,6 +25,14 @@
               <input type="text" data-provide="datepicker" class="form-control" id="apellidom" name="apellidom" placeholder="Apellido materno" value="" required>
             </div>
             
+            <div class="col-sm-12">
+              <label for="apellidom" class="form-label">Selecciona el Rol</label>
+              <?php
+                $rol = new rolController();
+                $rol->select()
+              ?>
+              
+            </div>
 
             <div class="col-12">
               <label for="password" class="form-label">Password</label>
