@@ -39,15 +39,17 @@ require_once 'models/usuario.php';
 			$apellidop = isset($_POST['apellidop']) ? $_POST['apellidop'] : false;
       $apellidom = isset($_POST['apellidom']) ? $_POST['apellidom'] : false;
       $rol = isset($_POST['rol']) ? $_POST['rol'] : false;
+      $organigrama = isset($_POST['organigrama']) ? $_POST['organigrama'] : false;
 			$password = isset($_POST['password']) ? $_POST['password'] : false;
 
-      if($usuario && $nombre && $apellidop && $apellidom && $rol && $password){
+      if($usuario && $nombre && $apellidop && $apellidom && $rol && $organigrama && $password){
         $usuarios = new Usuario();
         $usuarios->setUsuario($usuario);
         $usuarios->setNombre($nombre);
 				$usuarios->setApellido_paterno($apellidop);
         $usuarios->setApellido_materno($apellidom);
         $usuarios->setId_rol($rol);
+        $usuarios->setId_organigrama($organigrama);
 				$usuarios->setId_pass($password);
         $save = $usuarios->save();
 

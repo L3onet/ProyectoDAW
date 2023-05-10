@@ -26,12 +26,19 @@
             </div>
             
             <div class="col-sm-12">
-              <label for="apellidom" class="form-label">Selecciona el Rol</label>
+              <label for="rol" class="form-label">Selecciona el Rol</label>
               <?php
                 $rol = new rolController();
                 $rol->select()
               ?>
-              
+            </div>
+
+            <div class="col-sm-12">
+              <label for="organigrama" class="form-label">Selecciona el puesto del organigrama</label>
+              <?php
+                $organigrama = new organigramaController();
+                $organigrama->select()
+              ?>
             </div>
 
             <div class="col-12">
