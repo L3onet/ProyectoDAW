@@ -40,7 +40,13 @@ require_once 'models/usuario.php';
       $apellidom = isset($_POST['apellidom']) ? $_POST['apellidom'] : false;
       $rol = isset($_POST['rol']) ? $_POST['rol'] : false;
       $organigrama = isset($_POST['organigrama']) ? $_POST['organigrama'] : false;
+      $activar = isset($_POST['active']) ? $_POST['active'] : false;
 			$password = isset($_POST['password']) ? $_POST['password'] : false;
+      if($activar == 1){
+        $activo = 1;
+      } else {
+        $activo = 0;
+      }
 
       if($usuario && $nombre && $apellidop && $apellidom && $rol && $organigrama && $password){
         $usuarios = new Usuario();
@@ -50,6 +56,7 @@ require_once 'models/usuario.php';
         $usuarios->setApellido_materno($apellidom);
         $usuarios->setId_rol($rol);
         $usuarios->setId_organigrama($organigrama);
+        $usuarios->setEstado($activo);
 				$usuarios->setId_pass($password);
         $save = $usuarios->save();
 
