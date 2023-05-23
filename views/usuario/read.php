@@ -24,14 +24,91 @@
       <td><?=$user->APELLIDO_PATERNO;?></td>
       <td><?=$user->APELLIDO_MATERNO;?></td>
       <td><?=$user->AREA;?></td>
-      <td><?=$user->ESTADO?></td>
       <td>
-        <button type="button" class="w-100 btn btn-success btn-xs" data-bs-toggle="modal" data-bs-target="#usuarioReadModal">
+        <?php
+        if ($user->ESTADO == 1){
+          echo '<div class="form-check form-switch">
+                <input class="form-check-input" value="1" type="checkbox" id="active" name="active" checked="" kl_vkbd_parsed="true" disabled>
+                
+          </div>';
+        } else {
+          echo '<div class="form-check form-switch">
+          <input class="form-check-input" value="1" type="checkbox" id="active" name="active" kl_vkbd_parsed="true" disabled>
+          
+        </div>';
+        }
+        ?>
+      </td>
+      <td>
+        <button type="button" class="w-100 btn btn-success btn-xs" data-bs-toggle="modal" data-bs-target="#usuarioReadModal_<?=$user->ID_USUARIO;?>">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
           </svg>
         </button>
+        <div class="modal fade" id="usuarioReadModal_<?=$user->ID_USUARIO;?>" tabindex="-1" aria-labelledby="usuarioReadModal" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Información del usuario: <?=$user->USUARIO;?></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <th scope="row">ID</th>
+                      <td><?=$user->ID_USUARIO;?></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Rol</th>
+                      <td><?=$user->NOMBRE_ROL;?></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Usuario</th>
+                      <td><?=$user->USUARIO;?></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Nombre</th>
+                      <td><?=$user->NOMBRE;?></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Apellido Paterno</th>
+                      <td><?=$user->APELLIDO_PATERNO;?></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Apellido Materno</th>
+                      <td><?=$user->APELLIDO_MATERNO;?></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Puesto</th>
+                      <td><?=$user->AREA;?></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Estado</th>
+                      <td><?php
+        if ($user->ESTADO == 1){
+          echo '<div class="form-check form-switch">
+                <input class="form-check-input" value="1" type="checkbox" id="active" name="active" checked="" kl_vkbd_parsed="true" disabled>
+                
+          </div>';
+        } else {
+          echo '<div class="form-check form-switch">
+          <input class="form-check-input" value="1" type="checkbox" id="active" name="active" kl_vkbd_parsed="true" disabled>
+          
+        </div>';
+        }
+        ?></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </td>
       <td>
         <button type="button" class="w-100 btn btn-primary btn-xs">
@@ -53,21 +130,3 @@
     <?php endwhile; ?>
   </tbody>
 </table>
-
-<!-- Modal -->
-<div class="modal fade" id="usuarioReadModal" tabindex="-1" aria-labelledby="usuarioReadModal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Usuario</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
